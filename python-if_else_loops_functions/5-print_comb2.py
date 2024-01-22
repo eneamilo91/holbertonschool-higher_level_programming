@@ -7,4 +7,4 @@ for i in range(0, 100):
         else:
             print("{}, ".format(i), end="")
     else:
-        print(i)
+        print("{}".format(i))
