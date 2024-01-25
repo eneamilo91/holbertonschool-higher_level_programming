@@ -2,6 +2,9 @@
 
 def print_matrix_integer(matrix=[[]]):
     for i in range(len(matrix)):
-        for number in matrix[i]:
-            print("{:d} ".format(number), end="")
+        for j in range(len(matrix[i])):
+            if j == -1:
+                print("{:d}".format(matrix[i][j]))
+            else:
+                print("{:d} ".format(matrix[i][j]), end="")
         print()
