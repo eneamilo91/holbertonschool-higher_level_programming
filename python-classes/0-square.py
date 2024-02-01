@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
-# Module containing a simple class
+"""Module containing a simple class"""
+
 
 class Square:
-    # empty class
+    """empty class"""
     pass
