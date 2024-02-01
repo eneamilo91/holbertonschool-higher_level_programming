@@ -3,5 +3,5 @@
 # Module containing a simple class
 
 class Square:
-
+    # empty class
     pass
