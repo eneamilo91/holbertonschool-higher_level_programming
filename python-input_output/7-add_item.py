@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 
 """module to manipulate file"""
-import json
+
+import os
 from sys import argv
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-my_list = []
-
+if os.exists("add_item.json"):
+    list1 = load_from_json_file("add_item.json")
+list1 = []
 for i in range(1, len(argv)):
-    my_list.append(argv)
-
-save_to_json_file(my_list, "add_item.json")
-load_from_json_file("add_item.json")
+    list1.append(argv)
+save_to_json_file(list1, "add_item.json")
