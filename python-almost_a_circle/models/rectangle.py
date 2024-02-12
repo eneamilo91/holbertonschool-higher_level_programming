@@ -3,6 +3,7 @@
 """module about a rectangle"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """class about a rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
