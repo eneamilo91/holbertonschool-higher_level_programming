@@ -79,7 +79,7 @@ class Rectangle(Base):
     def update(self, *args):
         """func to add args to object"""
         if len(args) >= 1:
-            self.__id = args[0]
+            self.id = args[0]
         if len(args) >= 2:
             self.__width = args[1]
         if len(args) >= 3:
