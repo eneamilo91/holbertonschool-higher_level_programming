@@ -23,7 +23,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """func to add args to object"""
-        attributes = ["id", "height", "x", "y"]
+        attributes = ["id", "size", "x", "y"]
         if args and args is not None:
             if len(args) >= 1:
                 self.id = args[0]
