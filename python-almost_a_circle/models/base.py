@@ -18,6 +18,6 @@ class Base:
     def to_json_string(list_dictionaries):
         """func to convert to json string"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return []
+            return "[]"
         my_list = json.dumps(list_dictionaries)
         return my_list
