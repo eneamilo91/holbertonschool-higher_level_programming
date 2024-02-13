@@ -83,13 +83,13 @@ class Rectangle(Base):
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:
-                self.width = args[1]
+                self.__width = args[1]
             if len(args) >= 3:
-                self.height = args[2]
+                self.__height = args[2]
             if len(args) >= 4:
-                self.x = args[3]
+                self.__x = args[3]
             if len(args) >= 5:
-                self.y = args[4]
+                self.__y = args[4]
         else:
             for key in kwargs.keys():
                 if key in attributes:
@@ -98,3 +98,8 @@ class Rectangle(Base):
     def to_dictionary(self):
         """func to return a dictionary"""
         return self.__dict__
+
+    def to_dictionary(self):
+        """func to print a dict representation """
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
