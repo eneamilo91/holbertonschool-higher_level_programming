@@ -94,3 +94,7 @@ class Rectangle(Base):
             for key in kwargs.keys():
                 if key in attributes:
                     setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """func to return a dictionary"""
+        return self.__dict__
