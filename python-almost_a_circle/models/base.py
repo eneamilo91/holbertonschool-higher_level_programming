@@ -39,3 +39,43 @@ class Base:
                 if issubclass(objs.__class__, Base):
                     list_of_dictionaries.append(objs.to_dictionary())
             file_js.write(Base.to_json_string(list_of_dictionaries))
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''
+        Function that returns the list
+        of the json_string representation
+        '''
+
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''
+        Function that creates an instance
+        from dictionary given
+        '''
+        if cls.__name__ == 'Rectangle':
+            new_instance = cls(1, 1)
+        if cls.__name__ == 'Square':
+            new_instance = cls(1)
+        new_instance.update(**dictionary)
+        return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        '''
+        Function that returns a list of instances
+        '''
+        if os.path.isfile(f"{cls.__name__}.json"):
+            with open(f"{cls.__name__}.json") as text_json:
+                obj_dict = cls.from_json_string(text_json.read())
+                obj_list = []
+                for dictionaries in obj_dict:
+                    new_obj = cls.create(**dictionaries)
+                    obj_list.append(new_obj)
+                return obj_list
+        else:
+            return []
