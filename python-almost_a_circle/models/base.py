@@ -2,6 +2,7 @@
 
 """module for a class"""
 import json
+import os.path
 
 
 class Base:
